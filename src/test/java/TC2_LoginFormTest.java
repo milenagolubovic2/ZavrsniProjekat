@@ -8,9 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class TC2_LoginFormTest {
 
-    String webElemUserPage = "//span[@class='user-identity-name']//b[text()='Milena']";
-    String webElemUserFullName = "//ul//li[contains(.,'Milena G')]";
-
     // Test case 2 : Open Gigatron Login form and enter valid data
 
     @Test
@@ -46,11 +43,7 @@ public class TC2_LoginFormTest {
         // Click on Login button
         gigatronLogin.clickLogin();
 
-        // Wait for page to be loaded
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(webElemUserPage)));
-
-        // Verify that User is Successfully login on his account
+        // Wait for page to be loaded  and verify that User is Successfully login on his account
         boolean isLoginSuccess = gigatronLogin.checkUserLoginSuccess();
         Assert.assertEquals(isLoginSuccess, true);
         Thread.sleep(3000);
