@@ -16,14 +16,8 @@ public class GigatronHomePage {
     //Locator for Facebook header icon
     By fbHeaderElem = By.xpath("//li[@class='social']//a[contains(@href,'https://www.facebook.com/GigatronRS')]");
 
-    //Locator for Facebook footer icon
-    By fbFooterElem = By.xpath("//div[@class='footer-social']/a[contains(@href,'https://www.facebook.com/GigatronRS')]");
-
     //Locator for Instagram header icon
     By instHeaderElem = By.xpath( "//li[@class='social']//a[contains(@href,'https://www.instagram.com/gigatron.rs')]");
-
-    //Locator for Instagram footer icon
-    By instFooterElem = By.xpath("//div[@class='footer-social']/a[contains(@href,'https://www.instagram.com/gigatron.rs')]");
 
     //Constructor that will be called as soon as the object of the class is created
     public GigatronHomePage(WebDriver driver) {
@@ -55,32 +49,26 @@ public class GigatronHomePage {
     }
 
     //Method for checking Facebook widget exists
-    public boolean fbWidgetsExist(){
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(fbHeaderElem));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(fbFooterElem));
-        if (driver.findElements(fbHeaderElem).size() !=0 && driver.findElements(fbFooterElem).size() !=0 )
+    public boolean fbWidgetExist(){
+        if (driver.findElements(fbHeaderElem).size() !=0)
         {
-            System.out.println("Step 2: Check Gigatron Facebook widgets - SUCCESS");
+            System.out.println("Step 2: Check Gigatron Facebook widget - SUCCESS");
             return true;
         }
         else
-            System.out.println("ERROR Checking Gigatron Facebook widgets - FAILED");
+            System.out.println("ERROR Checking Gigatron Facebook widget - FAILED");
             return false;
     }
 
     //Method for checking Instagram widget exists
-    public boolean instWidgetsExist(){
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(instHeaderElem));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(instFooterElem));
-        if (driver.findElements(instHeaderElem).size() !=0 && driver.findElements(instFooterElem).size() !=0)
+    public boolean instWidgetExist(){
+        if (driver.findElements(instHeaderElem).size() !=0)
         {
-            System.out.println("Step 3: Check Gigatron Instagram widgets - SUCCESS");
+            System.out.println("Step 3: Check Gigatron Instagram widget - SUCCESS");
             return true;
         }
         else
-            System.out.println("ERROR Checking Gigatron Instagram widgets - FAILED");
+            System.out.println("ERROR Checking Gigatron Instagram widget - FAILED");
             return false;
     }
 }
