@@ -44,8 +44,7 @@ public class TC2_LoginFormTest {
         gigatronLogin.clickLogin();
 
         // Wait for page to be loaded  and verify that User is Successfully login on his account
-        boolean isLoginSuccess = gigatronLogin.checkUserLoginSuccess();
-        Assert.assertEquals(isLoginSuccess, true);
+        gigatronLogin.checkUserLoginSuccess();
         Thread.sleep(3000);
 
         driver.quit();

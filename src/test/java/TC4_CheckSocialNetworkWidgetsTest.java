@@ -27,13 +27,13 @@ public class TC4_CheckSocialNetworkWidgetsTest {
         gigatronHome.clickAcceptCookies();
         Thread.sleep(3000);
 
-        // Find FB widgets
-        boolean checkFbWidget = gigatronHome.fbWidgetsExist();
+        // Find FB widget
+        boolean checkFbWidget = gigatronHome.fbWidgetExist();
         Assert.assertEquals(checkFbWidget, true);
         Thread.sleep(3000);
 
-        // Find Instagram widgets
-        boolean checkInstWidget = gigatronHome.instWidgetsExist();
+        // Find Instagram widget
+        boolean checkInstWidget = gigatronHome.instWidgetExist();
         Assert.assertEquals(checkInstWidget, true);
         Thread.sleep(3000);
 

@@ -25,15 +25,13 @@ public class GigatronBasketPage {
 
     //Method for checking is Basket status
     public boolean basketEmpty(){
-        WebDriverWait wait = new WebDriverWait(driver, 15);
-        if (driver.findElements(emptyBasketElem).size() !=0 )
-        {
+        if (driver.findElements(emptyBasketElem).size() !=0){
             System.out.println("Step 3: Check that Basket is empty - SUCCESS");
             return true;
-        }
-        else
+            }
+        else {
             System.out.println("ERROR verifying if Basket is empty - FAILED");
             return false;
     }
-
+    }
 }
